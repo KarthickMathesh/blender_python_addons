@@ -1,3 +1,5 @@
+import bpy
+
 bl_info = {
     "name": "Plank Generator",
     "author": "Karthick",
@@ -10,17 +12,8 @@ bl_info = {
     "category": "Physics",
 }
 
-import bpy
 
-
-def execute(context):
-    class Plank(bpy.types.Operator):
-        x = bpy.props.StringProperty(name="X", default="0")
-        y = bpy.props.StringProperty(name="Y", default="0")
-        z = bpy.props.StringProperty(name="Z", default="0")
-
-        print(x, y, z)
-
+def execute():
     for x in range(0, 5):
         for z in range(0, 20):
             bpy.ops.mesh.primitive_cube_add(location=(x * 10, 4, z * 4), scale=(5, 1, 1))
@@ -93,9 +86,9 @@ class CustomPanel(bpy.types.Panel):
 
     def draw(self, context):
         layout = self.layout
-        obj = context.object
+        var = context.object
         row = layout.row()
-        layout.scale_y = 2.0
+        layout.scale_y = 1.5
         row.operator(ButtonOperator.bl_idname, text="Generate", icon='CUBE')
 
 
