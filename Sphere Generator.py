@@ -1,34 +1,3 @@
-# import bpy
-# import random
-# from math import radians
-
-# bpy.ops.object.select_all(action='SELECT')
-# bpy.ops.object.delete(use_global=False, confirm=False)
-
-# for i in range(1, 6):
-#   if i == 1:
-#     bpy.ops.mesh.primitive_cube_add()
-#     plank = bpy.context.active_object
-#     plank.name = "Plank_" + str(i)
-#     plank.scale = [12, 3, 1]
-#     plank.rotation_euler[0] = radians(90)
-#     plank.location[0] = 24 * i
-#     plank.location[2] = 3
-
-
-#   elif i == 10:
-#     plank = bpy.context.active_object
-#     plank.name = "Plank_" + str(i)
-#     plank.location[0] = 24 * i
-#     plank.location[2] = 3
-
-#   else:
-#     bpy.ops.object.duplicate_move()
-#     plank = bpy.context.active_object
-#     plank.name = "Plank_" + str(i)
-#     plank.location[0] = 24 * i
-#     plank.location[2] = 3
-
 bl_info = {
     "name": "Random Sphere Regerator",
     "author": "Karthick",
